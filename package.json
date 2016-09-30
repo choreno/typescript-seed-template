@@ -9,9 +9,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.16.1",
     "browserify": "^13.1.0",
+    "del": "^2.2.2",
     "gulp": "^3.9.1",
+    "gulp-shell": "^0.5.2",
     "gulp-typescript": "^3.0.1",
+    "gulp-util": "^3.0.7",
     "tsify": "^1.0.7",
     "typescript": "^2.0.3",
     "vinyl-source-stream": "^1.1.0"
