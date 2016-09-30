@@ -53,7 +53,7 @@ gulp.task('browserSync',['browserify'], function () {
     })
 })
 
-// configure which files to watch and what tasks to use on file changes
+
 gulp.task('watches', ['browserSync'], function () {
     
     gulp.watch('*.html', ['browserify', browserSync.reload]);
@@ -62,6 +62,8 @@ gulp.task('watches', ['browserSync'], function () {
 });
 
 
+
+//DEFAULT
 gulp.task('default', ['watches']);
 
 
