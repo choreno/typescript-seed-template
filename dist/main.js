@@ -65,49 +65,25 @@ var PersonFactory = (function () {
     };
     return PersonFactory;
 }());
+var PersonPrinter = (function () {
+    function PersonPrinter() {
+    }
+    PersonPrinter.prototype.print = function (arg) {
+        console.log("Person bon on " + arg.getDateOfBirth() + " is a " + arg.getPersonCategory() + " and is  " + this.getPermissionString(arg) + " allowed to sign");
+    };
+    PersonPrinter.prototype.getPermissionString = function (arg) {
+        if (arg.canSignContracts())
+            return "";
+        return "NOT ";
+    };
+    return PersonPrinter;
+}());
 var personFactory = new PersonFactory();
+var personPrinter = new PersonPrinter();
 var personArray = new Array();
 personArray.push(personFactory.getPerson(new Date(2014, 09, 29))); // infant
 personArray.push(personFactory.getPerson(new Date(2000, 09, 29))); // child
 personArray.push(personFactory.getPerson(new Date(1950, 09, 29))); // adult
 for (var i = 0; i < personArray.length; i++) {
-    console.log(" A person with a birth date of :"
-        + personArray[i].getDateOfBirth()
-        + " is categorised as : "
-        + personArray[i].getPersonCategory()
-        + " and can sign : "
-        + personArray[i].canSignContracts());
+    personPrinter.print(personArray[i]);
 }
-// interface IBase {
-//     id: number;
-// }
-// interface IDrivedFromBase extends IBase {
-//     name: string;
-// }
-// class BaseClass implements IBase {
-//     id: number;
-// }
-// class DerivedClass extends BaseClass implements IDrivedFromBase {
-//     name: string;
-// }
-// class BaseClassWithConstructor {
-//     private _id : number;
-//     constructor(id:number){
-//         this._id = id; 
-//     }
-//     getProperties(): string {
-//         return 'id:' + this._id; 
-//     } 
-// }
-// class DerivedClassWithConstructor extends BaseClassWithConstructor{
-//     private _name: string; 
-//     constructor(id: number, name:string){
-//         super(id);
-//         this._name  = name ;
-//     }
-//     getProperties():string{
-//         return "_name:" + this._name + '.' + super.getProperties(); 
-//     }
-// }
-// var myDerivedClass = new DerivedClassWithConstructor(1, "name");
-// console.log (myDerivedClass.getProperties()); 
