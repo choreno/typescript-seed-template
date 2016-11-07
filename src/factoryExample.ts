@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 interface IPerson {
 
     getPersonCategory(): string;
@@ -90,7 +89,7 @@ for (var i = 0; i < personArray.length; i++) {
 
 
 }
-=======
+
 // interface IPerson {
 
 //     getPersonCategory(): string;
@@ -181,4 +180,4 @@ for (var i = 0; i < personArray.length; i++) {
 //         + personArray[i].canSignContracts());
 
 // }
->>>>>>> 37007a108df1b0a54ede4a70bc0b3df1aafba9b5
+
